@@ -67,8 +67,9 @@
                   <select name="haberGrup" class="form-control">
                     <option value="siyaset" >Siyaset</option>
                     <option value="spor">Spor</option>
-                    <option value= "ekonemi">Ekonemi</option>
+                    <option value= "ekonomi">Ekonomi</option>
                     <option value="saglik">Sağlık</option>
+                    <option value="sondakika">Sondakika</option>
                     
                   </select>
                   

@@ -37,7 +37,7 @@
 
     <!-- Main content -->
     <section class="content">
-     <h1>hoşgeldin panpa</h1>
+     <h1>Hoşgeldiniz</h1>
            
     </section>
     <!-- /.content -->

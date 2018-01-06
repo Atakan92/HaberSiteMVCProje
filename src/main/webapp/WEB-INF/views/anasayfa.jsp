@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="s"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -35,12 +37,14 @@
           
         </div> 
       </div>
+      
       <div class="col-lg-12 col-md-12 col-sm-12">
         <div class="header_bottom">
           <div class="logo_area"><a href="LoginSuccess.jsp" class="logo"><img src="resources/images/logo.jpg" alt=""></a></div>
           
         </div>
       </div>
+      
     </div>
   </header>
   <section id="navArea">
@@ -66,12 +70,10 @@
       <div class="col-lg-12 col-md-12">
         <div class="latest_newsarea"> <span>SON DAKİKA</span>
           <ul id="ticker01" class="news_sticker">
-            <li><a href="https://www.ntv.com.tr/yasam/kivanc-tatlitug-savciliga-ifade-verdi,5_CQVoG4IUiwo4LnNHCmdw"><img src="resources/images/kivanc.jpg" alt="">Kıvanç Adliyede</a></li>
-            <li><a href="https://www.ntv.com.tr/spor/romanin-en-iyi-genc-oyuncusu-cengiz-under,2TnZF0ZBh0yGVdeQMbleiA"><img src="resources/images/cengiz.jpg" alt="">Yılın genç oyuncusu</a></li>
-            <li><a href="https://www.ntv.com.tr/dunya/abdde-yangin-16-yarali,PdJ9hBQavkG7DCL_JLjk-g"><img src="resources/images/abd.jpg" alt="">ABD'de yangın</a></li>
-            <li><a href="https://www.ntv.com.tr/dunya/cikolata-2050-yilina-kadar-tukenebilir,1ZbYIVvsa0uUemRh6zQS1Q"><img src="resources/images/cikolata.jpg" alt="">Çikolata tükenebilir</a></li>
-            <li><a href="https://www.ntv.com.tr/turkiye/chpnin-adayi-chpli-olacak,Lz4bR5lWDk60090Fb_KoMQ"><img src="resources/images/chpaday.jpg" alt="">CHP'nin adayı</a></li>
-            <li><a href="https://www.ntv.com.tr/turkiye/bayrampasada-devrilen-minibus-trafigi-kilitledi,4fYPLvknbEueNrmOjMXPmg"><img src="resources/images/minibus.jpg" alt="">Devrilen Minibüs</a></li>
+          <c:forEach items="${sl }" var="item">
+            <li><a href='<s:url value="aciklama-/${item.getHaberid()}"></s:url>'><img src="http://localhost:8090/resim/server/php/files/<c:out value="${item.getHaberKlasor()}"></c:out>/thumbnail/<c:out value="${item.getHaberUrl()}"></c:out>" alt=""> <c:out value="${item.getHaberBaslik()}"></c:out> </a></li>
+          
+          </c:forEach>
           </ul>
         </div>
       </div>
@@ -81,57 +83,45 @@
     <div class="row">
       <div class="col-lg-8 col-md-8 col-sm-8">
         <div class="slick_slider">
-          <div class="single_iteam"> <a href="https://www.ntv.com.tr/yasam/kivanc-tatlitug-savciliga-ifade-verdi,5_CQVoG4IUiwo4LnNHCmdw"> <img src="resources/images/kivanc.jpg" alt=""></a>
+         
+             
+          
+          <c:forEach items="${hl }" var="item">
+          
+          
+          
+           <div class="single_iteam"> <a href='<s:url value="aciklama-/${item.getHaberid()}"></s:url>'> <img src="http://localhost:8090/resim/server/php/files/<c:out value="${item.getHaberKlasor()}"></c:out>/<c:out value="${item.getHaberUrl()}"></c:out>" alt=""></a>
             <div class="slider_article">
-              <h2><a class="slider_tittle" href="https://www.ntv.com.tr/yasam/kivanc-tatlitug-savciliga-ifade-verdi,5_CQVoG4IUiwo4LnNHCmdw">Kıvanç Tatlıtuğ Adliyede</a></h2>
-              <p>Tatlıtuğ, muhasebecisi Erdal D.'yi aramış ancak ulaşamayınca savcılığa başvurmuştu.</p>
+              
+              <p><c:out value="${item.getHaberBaslik()}"></c:out></p>
             </div>
           </div>
-          <div class="single_iteam"> <a href="https://www.ntv.com.tr/turkiye/chpnin-adayi-chpli-olacak,Lz4bR5lWDk60090Fb_KoMQ"> <img src="resources/images/chpaday.jpg" alt=""></a>
-            <div class="slider_article">
-              <h2><a class="slider_tittle" href="https://www.ntv.com.tr/turkiye/chpnin-adayi-chpli-olacak,Lz4bR5lWDk60090Fb_KoMQ">CHP adayları</a></h2>
-              <p>CHP Grup Başkanvekili Altay, adaylarının CHP'li olacağını söyledi.</p>
-            </div>
-          </div>
-          <div class="single_iteam"> <a href="https://www.ntv.com.tr/dunya/abdde-yangin-16-yarali,PdJ9hBQavkG7DCL_JLjk-g"> <img src="resources/images/abd.jpg" alt=""></a>
-            <div class="slider_article">
-              <h2><a class="slider_tittle" href="https://www.ntv.com.tr/dunya/abdde-yangin-16-yarali,PdJ9hBQavkG7DCL_JLjk-g">ABD'de yangın: 16 yaralı</a></h2>
-              <p>ABD'nin New York eyaletinin Bronx bölgesindeki bir binada çıkan yangında 16 kişinin yaralandığı bildirildi.</p>
-            </div>
-          </div>
+          
+          
+          
+          
+          
+          </c:forEach>
+
+          
+          
         </div>
       </div>
       <div class="col-lg-4 col-md-4 col-sm-4">
         <div class="latest_post">
-          <h2><span>Son Haberler</span></h2>
+          <h2><span>Son Yazılar</span></h2>
           <div class="latest_post_container">
             <div id="prev-button"><i class="fa fa-chevron-up"></i></div>
             <ul class="latest_postnav">
+           
+              <c:forEach items="${yl}" var="item">
               <li>
-                <div class="media"> <a href="https://www.ntv.com.tr/yasam/kivanc-tatlitug-savciliga-ifade-verdi,5_CQVoG4IUiwo4LnNHCmdw" class="media-left"> <img alt="" src="resources/images/kivanc.jpg"> </a>
-                  <div class="media-body"> <a href="https://www.ntv.com.tr/yasam/kivanc-tatlitug-savciliga-ifade-verdi,5_CQVoG4IUiwo4LnNHCmdw" class="catg_title"> Kıvanç Tatlıtuğ Adliyede</a> </div>
+                <div class="media"> <a href='<s:url value="aciklama"></s:url>' class="media-left"> <img alt="" src="http://localhost:8090/resim/server/php/files/<c:out value="${item.getYazarResimKlasor()}"></c:out>/thumbnail/<c:out value="${item.getYazarResimUrl()}"></c:out>"></a>
+                  <div class="media-body"> <a href='<s:url value="aciklama"></s:url>' class="catg_title"> <c:out value="${item.getYazarAdi() }"></c:out></a> </div>
                 </div>
               </li>
-              <li>
-                <div class="media"> <a href="https://www.ntv.com.tr/turkiye/chpnin-adayi-chpli-olacak,Lz4bR5lWDk60090Fb_KoMQ" class="media-left"> <img alt="" src="resources/images/chpaday.jpg"> </a>
-                  <div class="media-body"> <a href="https://www.ntv.com.tr/turkiye/chpnin-adayi-chpli-olacak,Lz4bR5lWDk60090Fb_KoMQ" class="catg_title"> CHP adayları</a> </div>
-                </div>
-              </li>
-              <li>
-                <div class="media"> <a href="https://www.ntv.com.tr/dunya/abdde-yangin-16-yarali,PdJ9hBQavkG7DCL_JLjk-g" class="media-left"> <img alt="" src="resources/images/abd.jpg"> </a>
-                  <div class="media-body"> <a href="https://www.ntv.com.tr/dunya/abdde-yangin-16-yarali,PdJ9hBQavkG7DCL_JLjk-g" class="catg_title"> ABD'de yangın: 16 yaralı</a> </div>
-                </div>
-              </li>
-              <li>
-                <div class="media"> <a href="https://www.ntv.com.tr/turkiye/bayrampasada-devrilen-minibus-trafigi-kilitledi,4fYPLvknbEueNrmOjMXPmg" class="media-left"> <img alt="" src="resources/images/minibus.jpg"> </a>
-                  <div class="media-body"> <a href="https://www.ntv.com.tr/turkiye/bayrampasada-devrilen-minibus-trafigi-kilitledi,4fYPLvknbEueNrmOjMXPmg" class="catg_title"> Devrilen Minibüs</a> </div>
-                </div>
-              </li>
-              <li>
-                <div class="media"> <a href="https://www.ntv.com.tr/dunya/cikolata-2050-yilina-kadar-tukenebilir,1ZbYIVvsa0uUemRh6zQS1Q" class="media-left"> <img alt="" src="resources/images/cikolata.jpg"> </a>
-                  <div class="media-body"> <a href="https://www.ntv.com.tr/dunya/cikolata-2050-yilina-kadar-tukenebilir,1ZbYIVvsa0uUemRh6zQS1Q" class="catg_title"> Çikolata tükenebilir</a> </div>
-                </div>
-              </li>
+              </c:forEach>
+              
             </ul>
             <div id="next-button"><i class="fa  fa-chevron-down"></i></div>
           </div>
@@ -148,9 +138,9 @@
             <div class="single_post_content_left">
               <ul class="business_catgnav  wow fadeInDown">
                 <li>
-                  <figure class="bsbig_fig"> <a href="pages/single_page.html" class="featured_img"> <img alt="" src="resources/images/featured_img1.jpg"> <span class="overlay"></span> </a>
+                  <figure class="bsbig_fig"> <a href="pages/single_page.html" class="featured_img"> <img alt="" src="resources/images/gelisme.jpg"> <span class="overlay"></span> </a>
                     <figcaption> <a href="pages/single_page.html">Spor Haberleri</a> </figcaption>
-                    <p>Spor haber içerik</p>
+                    <p>Sporda Haberlerinde Gelişmeler</p>
                   </figure>
                 </li>
               </ul>
@@ -158,23 +148,23 @@
             <div class="single_post_content_right">
               <ul class="spost_nav">
                 <li>
-                  <div class="media wow fadeInDown"> <a href="pages/single_page.html" class="media-left"> <img alt="" src="resources/images/post_img1.jpg"> </a>
-                    <div class="media-body"> <a href="pages/single_page.html" class="catg_title"> Spor Haberleri 1</a> </div>
+                  <div class="media wow fadeInDown"> <a href="pages/single_page.html" class="media-left"> <img alt="" src="resources/images/cenkliverpool.jpg"> </a>
+                    <div class="media-body"> <a href="pages/single_page.html" class="catg_title"> Cenk Tosun Liverpool maçı kadrosunda</a> </div>
                   </div>
                 </li>
                 <li>
-                  <div class="media wow fadeInDown"> <a href="pages/single_page.html" class="media-left"> <img alt="" src="resources/images/post_img2.jpg"> </a>
-                    <div class="media-body"> <a href="pages/single_page.html" class="catg_title"> Spor Haberleri 2</a> </div>
+                  <div class="media wow fadeInDown"> <a href="pages/single_page.html" class="media-left"> <img alt="" src="resources/images/drogba.jpg"> </a>
+                    <div class="media-body"> <a href="pages/single_page.html" class="catg_title"> Didier Drogba zirvede</a> </div>
                   </div>
                 </li>
                 <li>
-                  <div class="media wow fadeInDown"> <a href="pages/single_page.html" class="media-left"> <img alt="" src="resources/images/post_img1.jpg"> </a>
-                    <div class="media-body"> <a href="pages/single_page.html" class="catg_title"> Spor Haberleri 3</a> </div>
+                  <div class="media wow fadeInDown"> <a href="pages/single_page.html" class="media-left"> <img alt="" src="resources/images/aykut.jpg"> </a>
+                    <div class="media-body"> <a href="pages/single_page.html" class="catg_title"> Aykut Kocaman taktiği</a> </div>
                   </div>
                 </li>
                 <li>
-                  <div class="media wow fadeInDown"> <a href="pages/single_page.html" class="media-left"> <img alt="" src="resources/images/post_img2.jpg"> </a>
-                    <div class="media-body"> <a href="pages/single_page.html" class="catg_title"> Spor Haberleri 4</a> </div>
+                  <div class="media wow fadeInDown"> <a href="pages/single_page.html" class="media-left"> <img alt="" src="resources/images/chelsea.jpg"> </a>
+                    <div class="media-body"> <a href="pages/single_page.html" class="catg_title"> Beşiktaşta Kelechi sesleri</a> </div>
                   </div>
                 </li>
               </ul>
@@ -298,23 +288,23 @@
             <h2><span>Popüler Haberler</span></h2>
             <ul class="spost_nav">
               <li>
-                <div class="media wow fadeInDown"> <a href="pages/single_page.html" class="media-left"> <img alt="" src="resources/images/post_img1.jpg"> </a>
-                  <div class="media-body"> <a href="pages/single_page.html" class="catg_title"> Popüler Haber 1</a> </div>
+                <div class="media wow fadeInDown"> <a href="pages/single_page.html" class="media-left"> <img alt="" src="resources/images/cenkliverpool.jpg"> </a>
+                  <div class="media-body"> <a href="pages/single_page.html" class="catg_title"> Cenk Tosun Liverpool maçı kadrosunda</a> </div>
                 </div>
               </li>
               <li>
-                <div class="media wow fadeInDown"> <a href="pages/single_page.html" class="media-left"> <img alt="" src="resources/images/post_img2.jpg"> </a>
-                  <div class="media-body"> <a href="pages/single_page.html" class="catg_title"> Popüler Haber 2</a> </div>
+                <div class="media wow fadeInDown"> <a href="pages/single_page.html" class="media-left"> <img alt="" src="resources/images/abd.jpg"> </a>
+                  <div class="media-body"> <a href="pages/single_page.html" class="catg_title"> ABD'de yangın: 16 yaralı</a> </div>
                 </div>
               </li>
               <li>
-                <div class="media wow fadeInDown"> <a href="pages/single_page.html" class="media-left"> <img alt="" src="resources/images/post_img1.jpg"> </a>
-                  <div class="media-body"> <a href="pages/single_page.html" class="catg_title"> Popüler Haber 3</a> </div>
+                <div class="media wow fadeInDown"> <a href="pages/single_page.html" class="media-left"> <img alt="" src="resources/images/chpaday.jpg"> </a>
+                  <div class="media-body"> <a href="pages/single_page.html" class="catg_title"> CHP adayları</a> </div>
                 </div>
               </li>
               <li>
-                <div class="media wow fadeInDown"> <a href="pages/single_page.html" class="media-left"> <img alt="" src="resources/images/post_img2.jpg"> </a>
-                  <div class="media-body"> <a href="pages/single_page.html" class="catg_title"> Popüler Haber 4</a> </div>
+                <div class="media wow fadeInDown"> <a href="pages/single_page.html" class="media-left"> <img alt="" src="resources/images/aykut.jpg"> </a>
+                  <div class="media-body"> <a href="pages/single_page.html" class="catg_title"> Aykut Kocaman taktiği</a> </div>
                 </div>
               </li>
             </ul>
