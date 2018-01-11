@@ -60,7 +60,11 @@ public class GirisController {
                 HttpSession sessionUser = request.getSession();
                 sessionUser.setAttribute("ad",us.getAd());
 
+<<<<<<< HEAD
                 return "redirect:/yonetim";
+=======
+                return "redirect:/";
+>>>>>>> beca8ed2ffaae79defa96dc0bdbdaacff7db28ac
             }  
             else
             {	

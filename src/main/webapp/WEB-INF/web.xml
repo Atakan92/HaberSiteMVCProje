@@ -3,9 +3,15 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
 
+<<<<<<< HEAD
 	<display-name>HaberSiteMVCProje-master</display-name>
   <welcome-file-list>
     <welcome-file>giris.jsp</welcome-file>
+=======
+	<display-name>LoginProject</display-name>
+  <welcome-file-list>
+    <welcome-file>login.jsp</welcome-file>
+>>>>>>> beca8ed2ffaae79defa96dc0bdbdaacff7db28ac
     <welcome-file>register.jsp</welcome-file>
     <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>
