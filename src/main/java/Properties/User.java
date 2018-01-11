@@ -74,7 +74,7 @@ public class User {
             	Class.forName("com.mysql.jdbc.Driver");
     			
     			Connection bag = DriverManager.getConnection
-    					("jdbc:mysql://localhost/proje","root","");    
+    					("jdbc:mysql://localhost/projehaber","root","");    
     			
     			String sql = "SELECT * FROM user WHERE ad=? and sifre=?";    
             	

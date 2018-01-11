@@ -11,7 +11,7 @@ public class DB {
     final private String driver = "com.mysql.jdbc.Driver";
     final private String url = "jdbc:mysql://localhost/";
     
-    private String dbName = "proje";
+    private String dbName = "projehaber";
     private String dbUser = "root";
     private String dbPass = "";
     final private String encode = "?useUnicode=true&characterEncoding=utf-8";

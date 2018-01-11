@@ -256,9 +256,14 @@
                 <div class="pull-left">
                   <a href="#" class="btn btn-default btn-flat">Profile</a>
                 </div>
-                <div class="pull-right">
-                  <a href="#" class="btn btn-default btn-flat">Sign out</a>
-                </div>
+                <form action=LogoutServlet method=POST>
+			<p>
+			<br/>
+			<br/>
+			<font size="2"><strong> Çıkmak için tıklayınız:</strong></font>
+				<input type="submit" value="Logout" />
+			</p>
+	    </form>    
               </li>
             </ul>
           </li>

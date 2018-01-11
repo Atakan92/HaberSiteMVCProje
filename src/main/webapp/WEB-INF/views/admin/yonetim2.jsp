@@ -127,7 +127,7 @@
             <!-- /.box-header -->
   <div>     
 <c:if test="${ not empty id }">
-<iframe src='http://localhost:8090/resim/index.php?resim_id=<c:out value="${ id }"></c:out>' style="width: 100%; height: 500px;" frameborder="0"></iframe>
+<iframe src='http://localhost:80/resim/index.php?resim_id=<c:out value="${ id }"></c:out>' style="width: 100%; height: 500px;" frameborder="0"></iframe>
 </c:if>
 </div>     
             <!-- /.box-body -->

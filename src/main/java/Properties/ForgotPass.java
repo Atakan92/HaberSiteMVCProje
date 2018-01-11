@@ -25,7 +25,7 @@ public class ForgotPass {
 		Session session = Session.getInstance(props, new javax.mail.Authenticator(){
 			
 			protected PasswordAuthentication getPasswordAuthentication() {
-				return new PasswordAuthentication("expguard@hotmail.com","hus.1989");
+				return new PasswordAuthentication("expguard@hotmail.com","74v03w6d2");
 			}
 			
 });

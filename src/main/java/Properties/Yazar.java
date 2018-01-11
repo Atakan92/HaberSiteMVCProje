@@ -7,6 +7,7 @@ public class Yazar {
 	private String yazarResimUrl;
 	private String yazarId;
 	private String yazarResimKlasor;
+	private String yazarYaziId;
 	public String getYazarResimKlasor() {
 		return yazarResimKlasor;
 	}
@@ -42,6 +43,12 @@ public class Yazar {
 	}
 	public void setYazarYazi(String yazarYazi) {
 		this.yazarYazi = yazarYazi;
+	}
+	public String getYazarYaziId() {
+		return yazarYaziId;
+	}
+	public void setYazarYaziId(String yazarYaziId) {
+		this.yazarYaziId = yazarYaziId;
 	}
 
 }

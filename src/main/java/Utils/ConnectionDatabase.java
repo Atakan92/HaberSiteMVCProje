@@ -7,7 +7,7 @@ import java.sql.*;
 public class ConnectionDatabase {
 		
 		private static final String DRIVER = "com.mysql.jdbc.Driver";
-		private static final String CONNECTION_URL = "jdbc:mysql://localhost/proje";
+		private static final String CONNECTION_URL = "jdbc:mysql://localhost/projehaber";
 		private static final String USERNAME = "root";
 		private static final String PASSWORD = "";
 		

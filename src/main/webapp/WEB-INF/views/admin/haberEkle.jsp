@@ -43,7 +43,7 @@
 					<div class="box-body pad">
 					<c:if test="${ not empty id }">
 						<iframe
-							src='http://localhost:8090/resim/index.php?resim_id=<c:out value="${ id }"></c:out>'
+							src='http://localhost:80/resim/index.php?resim_id=<c:out value="${ id }"></c:out>'
 							style="width: 100%; height: 200px;" frameborder="0"></iframe>
 					</c:if>					
 					</div>
@@ -67,8 +67,9 @@
                   <select name="haberGrup" class="form-control">
                     <option value="siyaset" >Siyaset</option>
                     <option value="spor">Spor</option>
-                    <option value= "ekonemi">Ekonemi</option>
+                    <option value= "ekonomi">Ekonomi</option>
                     <option value="saglik">Sağlık</option>
+                    <option value="sondakika">Sondakika</option>
                     
                   </select>
                   

@@ -1,20 +1,15 @@
 package com.sirketadi.calisma;
 
 import java.io.File;
-import java.io.FileReader;
-import java.net.URI;
-import java.net.URL;
 import java.nio.charset.Charset;
-import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
-import org.apache.tomcat.util.http.fileupload.FileUtils;
+import org.apache.commons.io.FileUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -22,7 +17,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import Properties.Haber;
 import Properties.Yazar;
 import Properties.YazarBilgiEnum;
 import Utils.DB;
@@ -42,9 +36,10 @@ public class YaziEkleController {
 String dosyaadi="";
 List<String> lines=null;
 		try {
-			String q = "SELECT urun_resimleri.adi as dosyaad from urun_resimleri WHERE urun_id="+id+" HAVING MAX(id)"; 
+			String q = "CALL YazarSonJsp(?)";
+			
 			  PreparedStatement pr = new DB().preBaglan(q);
-	            
+	            pr.setString(1, id);
 	            
 				ResultSet rs=pr.executeQuery();
 				while(rs.next()) {

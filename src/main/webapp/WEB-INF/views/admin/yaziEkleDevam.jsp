@@ -33,36 +33,28 @@
 
 
 			<section class="content">
-				    
 
-		 <div class="box-body pad">
-		 <c:if test="${ not empty yazar }">
-		 <c:out value="${yazar }"></c:out>
+
+				<div class="box-body pad">
+					<c:if test="${ not empty yazar }">
+						<c:out value="${yazar }"></c:out>
 		 ----
 		 <c:out value="${yazarurl }"></c:out>
-		 <iframe
-							src='http://localhost:8090/resim/index.php?resim_id=0000<c:out value="${yazar }"></c:out>'
+						<iframe
+							src='http://localhost:80/resim/index.php?resim_id=0000<c:out value="${yazar }"></c:out>'
 							style="width: 100%; height: 200px;" frameborder="0"></iframe>
-		 
-		 </c:if>
-		
-		</div>
-		
-		<div>
-	    <a href='<s:url value="/edit-/${yazar}-/${yazarurl }-/${klasor}"></s:url>' class="btn btn-danger">Editle</a>
-		
-		
-		</div>
-	
 
-				
+					</c:if>
+
+				</div>
+
+				<div>
+					<a
+						href='<s:url value="/edit-/${yazar}-/${yazarurl }-/${klasor}"></s:url>'
+						class="btn btn-danger">Editle</a>
 
 
-
-
-
-
-
+				</div>
 			</section>
 
 		</div>

@@ -41,7 +41,7 @@
 						<input type="hidden" name="id"  value="${ id}">
 							<textarea class="ckeditor" id="editor1" name="editor1" rows="15"
 								cols="80">
-								<img id="res" alt="resim patladı caktırma (.jpg olmalı uzantı):)" src="http://localhost:8090/resim/server/php/files/<c:out value="${klasor}"></c:out>/thumbnail/<c:out value="${yazarurl}"></c:out>" style="float:right; height:125px; width:125px" />
+								<img id="res" alt="resim patladı caktırma (.jpg olmalı uzantı):)" src="http://localhost:80/resim/server/php/files/<c:out value="${klasor}"></c:out>/thumbnail/<c:out value="${yazarurl}"></c:out>" style="float:right; height:125px; width:125px" />
                                 <c:forEach items="${lines}" var="item">
 				
 						<c:out value="${ item }"></c:out>

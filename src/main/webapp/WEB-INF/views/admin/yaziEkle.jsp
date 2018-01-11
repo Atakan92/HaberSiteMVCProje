@@ -55,7 +55,7 @@
 						<th scope="row"><c:out value="${ item.getYazarAdi() }"></c:out></th>
 						<td><c:out value="${ item.getYazarGrup() }"></c:out></td>
 						<td><iframe
-	src='http://localhost:8090/resim/server/php/files/<c:out value="${item.getYazarResimKlasor() }"></c:out>/thumbnail/<c:out value="${item.getYazarResimUrl() }"></c:out>'
+	src='http://localhost:80/resim/server/php/files/<c:out value="${item.getYazarResimKlasor() }"></c:out>/thumbnail/<c:out value="${item.getYazarResimUrl() }"></c:out>'
 							style="width: 100%; height: 100px;" frameborder="0"></iframe>
 						</td>
 						<td><a href='<s:url value="/sil/${ item.getYazarId() }-/${ item.getYazarResimKlasor() }"></s:url>' class="btn btn-danger">Sil</a></td>
